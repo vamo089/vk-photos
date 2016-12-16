@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>vk</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet/less" type="text/css" href="mod/css/style.less">
+    <link rel="stylesheet/less" type="text/css" href="mod/css/modal.less">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.7.1/less.min.js"></script>
+    <script src="mod/js/js.js" type="text/javascript"></script>
+</head>
+
+<body>
+
+    <div id="container">
+        <div class="input">
+
+            <input type="number" required id="id" placeholder="Введите id плользователя" />
+            <button type="submit" onclick="sendRequest()">Показать</button>
+
+        </div>
+        <div id="loading"><img src="mod/img/loading.gif"></div>
+        <h1 id="error"></h1>
+        <div id="images">
+
+        </div>
+    </div>
+    <div class="modal">
+        <input class="modal-open" id="modal" type="checkbox" hidden>
+        <div class="modal-wrap" aria-hidden="true" role="dialog">
+            <label id="mo" class="modal-overlay" for="modal"></label>
+            <div class="modal-dialog">
+                <div class="modal-header">
+                    <label id="close" class="btn-close" for="modal" aria-hidden="true">×</label>
+                    <div id="date"></div>
+
+                    <img id="arrowl" src="mod/img/arrowl.png">
+                    <img id="arrowr" src="mod/img/arrowr.png">
+                </div>
+                <div id="modal-body">
+                </div>
+                <div class="modal-footer">
+                    <div id="likes"></div>
+                    <span id="likes-count"></span>
+                    <div id="comments"></div>
+                    <span id="comments-count"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+
+    </script>
+
+</body>
+
+</html>
