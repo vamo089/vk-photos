@@ -1,0 +1,53 @@
+@color: #1a1a1a;
+@font: 'Open Sans', sans-serif;
+
+body{
+	font-family: @font;
+}
+img{
+	cursor: pointer;
+}
+
+#container{
+	background-color: @color;
+	width: 980px;
+	height: 547px;
+	margin: auto;
+	margin-top: 10%;
+	.input{
+		margin: auto;
+    	width: 250px;
+	}
+	#loading{
+		width: 200px;
+		margin: auto;
+		display: none;
+		img{
+			width: 200px;
+			margin-top: 100%;
+		}
+	}
+
+	#error{
+		display: none;
+		color: red;
+    	text-align: center;
+    	line-height: 15;
+}
+	#images{
+		img{
+			width: 88px;
+			height: 88px;
+			margin: 5px;
+
+			&:hover{
+				cursor: pointer;
+			}
+		}
+	}
+}
+.visible{
+	display: block !important;
+}
+
+
