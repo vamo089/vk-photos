@@ -35,7 +35,7 @@
                     document.onkeydown = function(evt) {
                         evt = evt || window.event;
                         if (evt.keyCode == 27) {
-                            document.getElementById("mo").click();
+                            document.getElementById("closes-modal").click();
                         }
                         if (evt.keyCode == 37) {
                             ClickOnLeft(data);
@@ -141,31 +141,31 @@
             var bigid = document.getElementById("modal-body").getElementsByTagName("IMG")[0].getAttribute("id");
 
             if (bigid > 0) {
-                var bigidnumber = Number(bigid) - 1;
+                var BigIdNumber = Number(bigid) - 1;
 
 
                 AllClean();
-                document.getElementById("likes-count").innerHTML = data.response[bigidnumber].likes.count;
-                document.getElementById("comments-count").innerHTML = data.response[bigidnumber].comments.count;
+                document.getElementById("likes-count").innerHTML = data.response[BigIdNumber].likes.count;
+                document.getElementById("comments-count").innerHTML = data.response[BigIdNumber].comments.count;
 
-                Dates(data, bigidnumber);
+                Dates(data, BigIdNumber);
 
 
-                if (data.response[bigidnumber].src_xxbig !== undefined) {
+                if (data.response[BigIdNumber].src_xxbig !== undefined) {
 
-                    document.getElementById("modal-body").innerHTML = "<img id=" + [bigidnumber] + " src = " + data.response[bigidnumber].src_xxbig + ">";
+                    document.getElementById("modal-body").innerHTML = "<img id=" + [BigIdNumber] + " src = " + data.response[BigIdNumber].src_xxbig + ">";
                     return false;
                 }
-                if (data.response[bigidnumber].src_xbig !== undefined) {
-                    document.getElementById("modal-body").innerHTML = "<img id=" + [bigidnumber] + " src = " + data.response[bigidnumber].src_xbig + ">";
+                if (data.response[BigIdNumber].src_xbig !== undefined) {
+                    document.getElementById("modal-body").innerHTML = "<img id=" + [BigIdNumber] + " src = " + data.response[BigIdNumber].src_xbig + ">";
                     return false;
                 }
-                if (data.response[bigidnumber].src_big !== undefined) {
-                    document.getElementById("modal-body").innerHTML = "<img id=" + [bigidnumber] + " src = " + data.response[bigidnumber].src_big + ">";
+                if (data.response[BigIdNumber].src_big !== undefined) {
+                    document.getElementById("modal-body").innerHTML = "<img id=" + [BigIdNumber] + " src = " + data.response[BigIdNumber].src_big + ">";
                     return false;
                 }
-                if (data.response[bigidnumber].src_small !== undefined) {
-                    document.getElementById("modal-body").innerHTML = "<img id=" + [bigidnumber] + " src = " + data.response[bigidnumber].src_small + ">";
+                if (data.response[BigIdNumber].src_small !== undefined) {
+                    document.getElementById("modal-body").innerHTML = "<img id=" + [BigIdNumber] + " src = " + data.response[BigIdNumber].src_small + ">";
                 }
             } else {
                 AllClean();
@@ -242,30 +242,30 @@
             var lc = data.response.length - 1;
 
             if (bigid < lc) {
-                var bigidnumber = Number(bigid) + 1;
+                var BigIdNumber = Number(bigid) + 1;
 
                 AllClean();
-                document.getElementById("likes-count").innerHTML = data.response[bigidnumber].likes.count;
-                document.getElementById("comments-count").innerHTML = data.response[bigidnumber].comments.count;
+                document.getElementById("likes-count").innerHTML = data.response[BigIdNumber].likes.count;
+                document.getElementById("comments-count").innerHTML = data.response[BigIdNumber].comments.count;
 
-                Dates(data, bigidnumber);
+                Dates(data, BigIdNumber);
 
 
-                if (data.response[bigidnumber].src_xxbig !== undefined) {
+                if (data.response[BigIdNumber].src_xxbig !== undefined) {
 
-                    document.getElementById("modal-body").innerHTML = "<img id=" + [bigidnumber] + " src = " + data.response[bigidnumber].src_xxbig + ">";
+                    document.getElementById("modal-body").innerHTML = "<img id=" + [BigIdNumber] + " src = " + data.response[BigIdNumber].src_xxbig + ">";
                     return false;
                 }
-                if (data.response[bigidnumber].src_xbig !== undefined) {
-                    document.getElementById("modal-body").innerHTML = "<img id=" + [bigidnumber] + " src = " + data.response[bigidnumber].src_xbig + ">";
+                if (data.response[BigIdNumber].src_xbig !== undefined) {
+                    document.getElementById("modal-body").innerHTML = "<img id=" + [BigIdNumber] + " src = " + data.response[BigIdNumber].src_xbig + ">";
                     return false;
                 }
-                if (data.response[bigidnumber].src_big !== undefined) {
-                    document.getElementById("modal-body").innerHTML = "<img id=" + [bigidnumber] + " src = " + data.response[bigidnumber].src_big + ">";
+                if (data.response[BigIdNumber].src_big !== undefined) {
+                    document.getElementById("modal-body").innerHTML = "<img id=" + [BigIdNumber] + " src = " + data.response[BigIdNumber].src_big + ">";
                     return false;
                 }
-                if (data.response[bigidnumber].src_small !== undefined) {
-                    document.getElementById("modal-body").innerHTML = "<img id=" + [bigidnumber] + " src = " + data.response[bigidnumber].src_small + ">";
+                if (data.response[BigIdNumber].src_small !== undefined) {
+                    document.getElementById("modal-body").innerHTML = "<img id=" + [BigIdNumber] + " src = " + data.response[BigIdNumber].src_small + ">";
                 }
             } else {
                 AllClean();
@@ -353,8 +353,8 @@
 
         };
 
-        function Dates(data, bigidnumber) {
-            var date = new Date(data.response[bigidnumber].created * 1000);
+        function Dates(data, BigIdNumber) {
+            var date = new Date(data.response[BigIdNumber].created * 1000);
             var month = date.getMonth();
 
             switch (month) {
