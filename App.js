@@ -9,12 +9,10 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            value: '',
             media: {},
             data: null,
         };
         this.loadImage = this.loadImage.bind(this);
-        this.changevalue = this.changevalue.bind(this);
         this.getData = this.getData.bind(this);
         console.log(this.data);
     }
@@ -22,7 +20,7 @@ class App extends Component {
     getData(event) {
         let script = document.createElement('script');
         script.setAttribute('type', 'text/javascript');
-        script.setAttribute('src', 'https://api.vk.com/api.php?oauth=1&method=photos.get&aid=wall&limit=50&extended=1&callback=getdata&uid=' + this.state.value);
+        script.setAttribute('src', 'https://api.vk.com/api.php?oauth=1&method=photos.get&aid=wall&limit=50&extended=1&callback=getdata&uid=' + this.refs.id.value);
         document.getElementsByTagName('head')[0].appendChild(script);
         window.getdata = (result) => {
             this.setState({data: result});
@@ -60,10 +58,6 @@ class App extends Component {
     }
 
 
-    changevalue(event) {
-        this.setState({value: event.target.value});
-    }
-
     componentDidMount() {
         document.addEventListener('keyup', (event) => {
             if (document.querySelector('#modal').checked) {
@@ -85,7 +79,7 @@ class App extends Component {
             <div className="container">
                 <div className="data">
                     <form onSubmit={this.getData}>
-                        <input placeholder='id' value={this.state.value} onChange={this.changevalue} className="input" type="text"/>
+                        <input placeholder='id' ref="id" className="input" type="text"/>
                         <button onClick={this.vkid} type="submit">send</button>
                     </form>
                 </div>
